@@ -29,8 +29,8 @@
             align-items: center;
             /*max-width: 900px;*/
             margin: 10px auto;
-            padding: 10px 20px;
-            border-radius: 10px;
+            padding: 10px 40px;
+            border-radius: 5px;
             background-color: #f7f3ed;
         }
         .logo {
@@ -103,7 +103,7 @@
             border-radius: 10px;
             overflow: hidden;
             margin: 20px auto;
-            max-width: 900px;
+            max-width: 1000px;
         }
 
         .hero-content h1 {
@@ -480,22 +480,22 @@
         <button class="theme-button">Theme</button>
     </div>
 </nav>
-
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="typing-text">
+        </h1>
+        <h2>Feel the rhythm. Move with passion.</h2>
+        <p>
+            Discover the beauty of connection, movement, and music through Kizomba.
+            Join us and experience dance in a whole new way.
+        </p>
+        <button class="learn">Learn Kizomba</button>
+    </div>
+</section>
 
 
 <div class="container">
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="typing-text">
-            </h1>
-            <h2>Feel the rhythm. Move with passion.</h2>
-            <p>
-                Discover the beauty of connection, movement, and music through Kizomba.
-                Join us and experience dance in a whole new way.
-            </p>
-            <button class="learn">Learn Kizomba</button>
-        </div>
-    </section>
+
     <div class="offers">
         <div class="offer-card">
             <i class="fa-solid fa-music"></i>
@@ -653,7 +653,7 @@
         }
     });
     let heroTitle = document.querySelector(".typing-text");
-    let text = "Come Dance Kizomba";
+    let text = "Come dance Kizomba";
     let index = 0;
 
     function typeEffect() {
