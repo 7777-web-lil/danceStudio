@@ -81,6 +81,7 @@
             align-items: center;
             text-align: center;
             padding: 20px;
+
         }
 
         .hero::before {
@@ -96,6 +97,7 @@
             color: white;
             max-width: 500px;
         }
+
         .hero {
             height: 350px;
             border-radius: 10px;
@@ -105,10 +107,25 @@
         }
 
         .hero-content h1 {
-            font-size: 60px;
+            font-size: 40px;
             margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
             font-style: italic;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+        .typing-text {
+            min-height: 72px;
+            border-right: 3px solid white;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            padding-right: 6px;
+            animation: blink 0.7s step-end infinite;
+        }
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
         }
 
         .hero-content h2 {
@@ -143,7 +160,7 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 700px;
             margin: 40px auto;
             background-color: #ffffff;
             padding: 20px;
@@ -154,7 +171,8 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 70px;
+            margin-top: 80px;
         }
 
         .offer-card {
@@ -222,13 +240,13 @@
         }
 
         p {
-            font-style: oblique;
+            font-family: 'Montserrat', sans-serif;
             color: #3c3636;
             line-height: 1.7;
         }
         .section-title {
             text-align: center;
-            margin: 25px 0 15px;
+            margin: 40px 0 15px;
             font-family: 'Playfair Display', serif;
         }
 
@@ -236,7 +254,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-            margin-bottom: 20px;
+            margin-bottom: 60px;
         }
 
         .testimonial-card {
@@ -351,13 +369,19 @@
             width: 20%;
             margin-top: 4px;
         }
+        .aboutUs{
+            margin-top: 70px;
+            margin-bottom: 60px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+        }
         .about {
             text-align: center;
             margin-bottom: 30px;
         }
 
         .about p {
-            max-width: 600px;
+            max-width: 870px;
             margin: 0 auto;
             font-style: normal;
             line-height: 1.7;
@@ -369,7 +393,9 @@
 
         .contact p {
             margin: 5px 0;
+            font-family: 'Montserrat', sans-serif;
             font-style: normal;
+            font-size: 17px;
         }
         footer {
             text-align: center;
@@ -460,7 +486,8 @@
 <div class="container">
     <section class="hero">
         <div class="hero-content">
-            <h1>Kizomba</h1>
+            <h1 class="typing-text">
+            </h1>
             <h2>Feel the rhythm. Move with passion.</h2>
             <p>
                 Discover the beauty of connection, movement, and music through Kizomba.
@@ -580,7 +607,7 @@
 
         <button type="submit">Book Now</button>
     </form>
-
+     <div class="aboutUs">
     <h2 class="section-title">About Us</h2>
 
     <div class="about">
@@ -590,13 +617,14 @@
             and help every dancer grow at their own pace in a supportive environment.
         </p>
     </div>
+    </div>
     <hr>
     <h2 class="section-title">Contact Us</h2>
 
     <div class="contact">
-        <p>Email: kizomba@studio.com</p>
-        <p>Phone: +254 700 000 000</p>
-        <p>Location: Nairobi, Kenya</p>
+        <p> <a href="#"> Email: kizomba@studio.com</a></p>
+        <p> <a href="#"> Phone: +254 700 000 000 </a></p>
+        <p> <a href="#">Location: Nairobi, Kenya </a></p>
     </div>
 </div>
 
@@ -624,6 +652,19 @@
             alert("oops something happened");
         }
     });
+    let heroTitle = document.querySelector(".typing-text");
+    let text = "Come Dance Kizomba";
+    let index = 0;
+
+    function typeEffect() {
+        if (index < text.length) {
+            heroTitle.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 150);
+        }
+    }
+
+    typeEffect();
 </script>
 
 </body>
