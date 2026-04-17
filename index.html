@@ -166,6 +166,7 @@
             font-family: 'Montserrat', sans-serif;
         }
 
+
         button {
             display: block;
             margin: 0 auto;
@@ -177,12 +178,15 @@
             padding: 10px 16px;
             box-shadow: 2px 2px 3px rgba(0,0,0,0.15);
             cursor: pointer;
+            text-decoration: none;
         }
 
         button:hover {
             background-color: #b88efc;
         }
-
+.learn{
+    text-decoration: none;
+}
         .container {
             max-width: 700px;
             margin: 40px auto;
@@ -518,7 +522,7 @@
             Discover the beauty of connection, movement, and music through Kizomba.
             Join us and experience dance in a whole new way.
         </p>
-        <button class="learn">Learn Kizomba</button>
+        <button><a href="#booking" class="learn">Learn Kizomba</a></button>
     </div>
 </section>
 
@@ -670,17 +674,60 @@
     }
 
     let button = document.querySelector(".theme-button");
-    button.addEventListener("click", changeTheme);
 
-    let btn = document.querySelector(".learn");
-    btn.addEventListener("click", () => {
-        let name = prompt("Hey what's your name?");
-        if (name && name.length > 0) {
-            alert(`Hey ${name}, welcome to Kizomba`);
-        } else {
-            alert("oops something happened");
+    button.addEventListener("click", changeTheme);
+    const form = document.querySelector(".booking-form");
+    const nameInput = form.querySelector('input[type="text"]');
+    const emailInput = form.querySelector('input[type="email"]');
+    const packageSelect = form.querySelector("select");
+    const dateInput = form.querySelector('input[type="date"]');
+    const textarea = form.querySelector("textarea");
+
+    function isValidName(name) {
+        return /^[A-Za-z\s'-]{2,50}$/.test(name.trim());
+    }
+
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+    }
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nameValue = nameInput.value.trim();
+        const emailValue = emailInput.value.trim();
+        const packageValue = packageSelect.value;
+        const dateValue = dateInput.value;
+
+        if (!isValidName(nameValue)) {
+            alert("Please enter a valid name using letters only.");
+            nameInput.focus();
+            return;
         }
+
+        if (!isValidEmail(emailValue)) {
+            alert("Please enter a valid email address.");
+            emailInput.focus();
+            return;
+        }
+
+        if (!packageValue) {
+            alert("Please choose a package.");
+            packageSelect.focus();
+            return;
+        }
+
+        if (!dateValue) {
+            alert("Please choose a class date.");
+            dateInput.focus();
+            return;
+        }
+
+        alert(`Thanks ${nameValue}! Your ${packageSelect.options[packageSelect.selectedIndex].text} booking request was received successfully.`);
+
+        form.reset();
     });
+
     let heroTitle = document.querySelector(".typing-text");
     let text = "Come dance Kizomba";
     let index = 0;
