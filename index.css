@@ -1,0 +1,481 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #8e6e6e;
+    font-family: 'Montserrat', sans-serif;
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*max-width: 900px;*/
+    margin: 10px auto;
+    padding: 10px 40px;
+    border-radius: 5px;
+    background-color: #f7f3ed;
+    box-shadow:4px 4px 6px rgba(255, 105, 180, 0.15);
+}
+.logo {
+    color: #593434;
+    font-size: 22px;
+    font-style: italic;
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #c66464;
+    font-size: 14px;
+}
+.theme-button {
+    font-size: 12px;
+    background: black;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.theme-button:hover {
+    color: black;
+    background: white;
+}
+.social-icons {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.social-icons a:hover {
+    background: #d7b584;
+    transform: scale(1.1);
+}
+
+.hero {
+    min-height: 100vh;
+    background: url("https://images.unsplash.com/photo-1635164055506-0b7d67505d64?w=1200&auto=format&fit=crop&q=80") center/cover no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 500px;
+}
+
+.hero {
+    height: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.typing-text {
+    min-height: 72px;
+    border-right: 3px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    padding-right: 6px;
+    animation: blink 0.7s step-end infinite;
+}
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.hero-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-style: italic;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    color: white;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+button {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid bisque;
+    background: #d7b584;
+    font-size: 15px;
+    font-style: oblique;
+    border-radius: 8px;
+    padding: 10px 16px;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.15);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #b88efc;
+}
+.learn{
+    text-decoration: none;
+}
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.offers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 70px;
+    margin-top: 80px;
+}
+
+.offer-card {
+    background: #f8f4f1;
+    padding: 20px 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.offer-card i {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.offer-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+}
+
+.offer-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    font-style: normal;
+}
+
+@media (max-width: 600px) {
+    .offers {
+        grid-template-columns: 1fr;
+    }
+}
+
+.grid {
+    margin: 15px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.grid img {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: all 200ms ease-in-out;
+}
+
+.grid img:hover {
+    transform: scale(1.05);
+}
+
+.im3 {
+    box-shadow: -1px 3px 3px rgba(0,0,0,0.15);
+}
+
+.im4 {
+    box-shadow: -1px 5px 5px rgba(0,0,0,0.15);
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    color: #3c3636;
+    line-height: 1.7;
+}
+
+.section-title {
+    text-align: center;
+    margin: 40px 0 15px;
+    font-family: 'Playfair Display', serif;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.testimonial-card {
+    background: #f8f4f1;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile h4 {
+    font-size: 14px;
+    margin: 0;
+}
+
+.profile span {
+    font-size: 12px;
+    color: gray;
+}
+
+.testimonial-card p {
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.6;
+}
+.classes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.class-card {
+    background: #f8f4f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.class-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+}
+
+.class-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    font-style: normal;
+    margin-bottom: 10px;
+}
+
+.class-card span {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #dfc4c4;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    border-color: #d1b9f9;
+}
+
+.booking-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.booking-form button {
+    width: 20%;
+    margin-top: 4px;
+}
+.aboutUs{
+    margin-top: 70px;
+    margin-bottom: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+}
+.about {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about p {
+    max-width: 870px;
+    margin: 0 auto;
+    font-style: normal;
+    line-height: 1.7;
+}
+.contact {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact p {
+    margin: 5px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-size: 17px;
+}
+footer {
+    text-align: center;
+    margin: 20px;
+    color: #2a1f1f;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.dark .navbar {
+    background: rgba(0, 0, 0, 0.92);
+}
+
+.dark .container {
+    background-color: #2a1f1f;
+    color: white;
+}
+
+.dark a {
+    color: brown;
+}
+
+.dark footer {
+    text-shadow: 1px 1px 2px #000;
+    color: white;
+}
+
+.dark p {
+    color: white;
+}
+
+.dark button {
+    background-color: black;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-content h2 {
+        font-size: 22px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
