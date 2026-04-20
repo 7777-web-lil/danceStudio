@@ -140,11 +140,11 @@
 
     <form class="booking-form">
         <div class="form-row">
-            <input type="text" placeholder="Your name" required>
-            <input type="email" placeholder="Your email" required>
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
         </div>
 
-        <select required>
+        <select name="package" required>
             <option value="">Choose a package</option>
             <option value="beginner">Beginner Package</option>
             <option value="group">Group Package</option>
@@ -152,11 +152,11 @@
         </select>
 
         <div class="form-row">
-            <input type="date" required>
-            <input type="tel" placeholder="Phone number">
+            <input type="date" name="date" required>
+            <input type="tel"  name="tel" placeholder="Phone number">
         </div>
 
-        <textarea placeholder="Tell us a little about your dance experience"></textarea>
+        <textarea  name="notes" placeholder="Tell us a little about your dance experience"></textarea>
 
         <button type="submit">Book Now</button>
     </form>
@@ -186,6 +186,7 @@
     Designed & Developed with 💗 by :
     <a href="https://lilis" target="_blank">lili k</a>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <script src="index.js">
 </script>
