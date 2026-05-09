@@ -6,6 +6,7 @@ function changeTheme() {
 let button = document.querySelector(".theme-button");
 
 button.addEventListener("click", changeTheme);
+
 const form = document.querySelector(".booking-form");
 const nameInput = form.querySelector('input[type="text"]');
 const emailInput = form.querySelector('input[type="email"]');
@@ -96,3 +97,9 @@ function typeEffect() {
 }
 
 typeEffect();
+const menuToggle = document.querySelector(".menu-toggle");
+const navRight = document.querySelector(".nav-right");
+
+menuToggle.addEventListener("click", () => {
+    navRight.classList.toggle("active");
+});

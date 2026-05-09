@@ -16,14 +16,15 @@ body {
     justify-content: space-between;
     align-items: center;
     /*max-width: 900px;*/
-    margin: 10px auto;
+    margin: 0 auto;
     padding: 10px 40px;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     background-color: #f7f3ed;
     box-shadow:4px 4px 6px rgba(255, 105, 180, 0.15);
 }
+
 .logo {
-    color: #593434;
+    color: #482b2b;
     font-size: 22px;
     font-style: italic;
 }
@@ -42,7 +43,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #c66464;
+    color: #4f2525;
     font-size: 14px;
 }
 .theme-button {
@@ -477,5 +478,120 @@ footer {
 
     .grid {
         grid-template-columns: 1fr;
+    }
+}
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #593434;
+}
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-right {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-right.active {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.dark .testimonial-card,
+.dark .class-card,
+.dark .offer-card {
+    background-color: #3a2b2b;
+    color: white;
+}
+.dark .testimonial-card p,
+.dark .class-card p,
+.dark .offer-card p,
+.dark .class-card span,
+.dark .offer-card h3,
+.dark .class-card h3,
+.dark .profile span,
+.dark .profile h4 {
+    color: white;
+}
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 12px 18px;
+    }
+
+    .hero {
+        min-height: 75vh;
+        height: auto;
+        margin: 0;
+        border-radius: 0;
+        padding: 80px 20px 40px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+        white-space: normal;
+    }
+
+    .typing-text {
+        white-space: normal;
+        min-height: auto;
+        border-right: none;
+    }
+
+    .hero-content h2 {
+        font-size: 20px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 92%;
+        margin: 25px auto;
+        padding: 16px;
+    }
+
+    .offers,
+    .classes,
+    .testimonials {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-form button {
+        width: 100%;
+    }
+
+    .social-icons {
+        display: none;
     }
 }
