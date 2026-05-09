@@ -20,7 +20,8 @@ body {
     padding: 10px 40px;
     /*border-radius: 5px;*/
     background-color: #f7f3ed;
-    box-shadow:4px 4px 6px rgba(255, 105, 180, 0.15);
+    /*box-shadow:4px 4px 6px rgba(255, 105, 180, 0.15);*/
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
 .logo {
@@ -550,10 +551,12 @@ footer {
 
     .hero-content {
         max-width: 100%;
+        /*margin-top: -50px;*/
     }
 
     .hero-content h1 {
-        font-size: 32px;
+        font-size: 20px;
+        line-height: 1.4;
         white-space: normal;
     }
 
@@ -564,11 +567,13 @@ footer {
     }
 
     .hero-content h2 {
-        font-size: 20px;
+        font-size: 16px;
+        line-height: 1.6;
     }
 
     .hero-content p {
         font-size: 14px;
+        line-height: 1.8;
     }
 
     /*.container {*/
@@ -577,7 +582,7 @@ footer {
     /*    padding: 16px;*/
     /*}*/
     .container {
-        width: 96%;
+        width: 100%;
         margin: 20px auto;
         padding: 16px;
     }
